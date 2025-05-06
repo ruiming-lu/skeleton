@@ -1,8 +1,10 @@
-\documentclass[letterpaper,twocolumn,10pt]{article}
-\usepackage{usenix2019_v3_squeeze}
+\documentclass[sigplan,10pt]{acmart}
+\renewcommand\footnotetextcopyrightpermission[1]{}
 
 \input{packages}
 \input{preamble}
+
+\settopmatter{printfolios=true, printacmref=false}
 
 \begin{document}
 \hypersetup{
@@ -19,17 +21,14 @@
 % \title{Beyond Limplock: Understanding the Nuances of Modern \\ Distributed Systems' Resilience to Slow Faults}
 \author{}
 
-\maketitle
 
 \input{section/abstract}
+
+\maketitle
+\pagestyle{plain}
+
+
 \input{section/intro}
-\input{section/method}
-\input{section/effect}
-\input{section/action}
-\input{section/analysis}
-\input{section/comparison}
-\input{section/related}
-\input{section/conclusion}
 
 \bibliographystyle{plain}
 \bibliography{bib/reference}
