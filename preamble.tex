@@ -1,0 +1,74 @@
+\graphicspath{{./}{figure/}}
+
+\newtheorem{definition}{Definition}
+\newtheorem{theorem}{Theorem}
+\setminted{style=colorful,
+  breaklines=true,
+  breaksymbolleft=,
+  fontsize=\footnotesize,
+  linenos,
+  xleftmargin=1.1em,
+  numbersep=\mintednumbersep
+}
+% https://tex.stackexchange.com/a/252265
+\newlength{\mintednumbersep}
+\AtBeginDocument{%
+  \sbox0{\tiny00}%
+  \setlength\mintednumbersep{\parindent}%
+  \addtolength\mintednumbersep{-\wd0}%
+}
+
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+\newcommand\red[1]{\textcolor{red}{#1}}
+\newcommand\blue[1]{\textcolor{blue}{#1}}
+\newcommand{\rph}[1]{\textcolor{magenta}{ryan: #1}} % comment by ryan
+\newcommand{\yzj}[1]{\textcolor{blue}{yzj: #1}}
+\newcommand{\todo}[1]{\emph{\textcolor{red}{TODO: #1}}} 
+\newcommand{\tool}{\textnormal{\textit{Phoenix}}\xspace}
+\setlength{\algomargin}{1ex}
+
+\DeclareSIUnit{\operation}{op}
+\sisetup{per-mode=symbol}
+
+\newcommand{\cmark}{\ding{51}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\smark}{\ding{91}}
+\newcommand{\raiseding}[1]{\raisebox{-.1\baselineskip}[0pt][0pt]{\ding{#1}}}
+
+\definecolor{ngray}{RGB}{102,102,102}
+
+\newcolumntype{R}[2]{%
+  >{\adjustbox{angle=#1,lap=\width-(#2)}\bgroup}%
+  l%
+  <{\egroup}%
+}
+\newcommand*\rot[1]{\multicolumn{1}{R{#1}{1em}}}
+%\newcommand*\vrot{\multicolumn{1}{R{90}{0em}}}
+\newcommand*\vrot[1]{#1}
+
+\newcommand{\locpinpoint}{\ding{248}}
+\newcommand{\locfunc}{\ding{91}}
+\newcommand{\locchain}{\ding{90}}
+\newcommand{\locentry}{\ding{119}}
+\newcommand{\locprocess}{\ding{108}}
+\newcommand{\locmiss}{\ding{109}}
+
+\definecolor{bg}{rgb}{0.95,0.95,0.95}
+
+\captionsetup{belowskip=0pt}
+\captionsetup{aboveskip=2pt}
+% \setlength{\textfloatsep}{5pt}
+\setlength{\textfloatsep}{0.5\baselineskip plus 0.1\baselineskip minus 0.1\baselineskip}
+
+\crefname{section}{\S}{\S\S}
+\crefname{subsection}{\S}{\S\S}
+\crefformat{section}{\S#2#1#3}
+\crefformat{subsection}{\S#2#1#3}
+
+\newcounter{magicrownumbers}
+\newcommand\rownumber{\stepcounter{magicrownumbers}\arabic{magicrownumbers}}
+
+% Just to protect my eyes tho ugly
+\definecolor{bgcolor}{rgb}{0.8,0.85,0.63}
+% \pagecolor{bgcolor}
